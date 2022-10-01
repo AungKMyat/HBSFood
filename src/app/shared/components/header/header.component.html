@@ -1,21 +1,9 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-button [matMenuTriggerFor]="menu">
+        <button mat-icon-button (click)="opened=!opened" >
             <mat-icon>menu</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item> 
-                <span>Enter Food Item</span>
-            </button>
-            <button mat-menu-item> 
-                <span>Menu</span>
-            </button>
-            <button mat-menu-item> 
-                <span>Food Item List</span>
-            </button>
-        </mat-menu>
-
-        <span>PAGE TITLE (CHANGE USING ANGULAR FUNDAMENTAL SAMPLE)</span>
+          </button>
+        <span>TITLE</span>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
@@ -41,3 +29,22 @@
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="push">
+        <mat-list>
+            <mat-list-item>
+                <a routerLink="">HBSForm</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="/item-list">Item List</a>
+            </mat-list-item>
+            <mat-list-item>
+                <a routerLink="/item-group">Item Group</a>
+            </mat-list-item>
+        </mat-list>
+            
+    </mat-sidenav>
+    <mat-sidenav-content>
+        Form
+    </mat-sidenav-content>
+  </mat-sidenav-container>

@@ -1,24 +1,25 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
-import { ItemListComponent } from './item-list/item-list.component';
-import { ItemGroupComponent } from './item-group/item-group.component';
-
-
-const routes: Routes = [
-  {
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { ItemGroupComponent } from './modules/item-group/item-group.component';
+import { ItemListComponent } from './modules/item-list/item-list.component';
+const routes: Routes = [{
   path: '',
   component: DefaultComponent,
+  children: [{
+    path: '',
+    component: DashboardComponent
   },
-  {
-    path: 'item-list',
-    component: ItemListComponent,
-  },
-  {
-    path: 'item-group',
-    component: ItemGroupComponent
-  }]
+{
+  path: 'item-list',
+  component: ItemListComponent
+},
+{
+  path: 'item-group',
+  component: ItemGroupComponent
+}]
+}];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

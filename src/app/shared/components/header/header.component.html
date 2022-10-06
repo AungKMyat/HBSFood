@@ -1,50 +1,37 @@
+
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-icon-button (click)="opened=!opened" >
+        <button mat-icon-button>
             <mat-icon>menu</mat-icon>
-          </button>
-        <span>TITLE</span>
+        </button>
+
+        <span> APP LOGO </span>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li>
                     <button mat-icon-button>
-                        <mat-icon>
-                            settings
-                        </mat-icon>
+                        <mat-icon>settings</mat-icon>
                     </button>
                 </li>
                 <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+                    <li>
                     <button mat-button [matMenuTriggerFor]="menu">
                         <mat-icon>person_outline</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item> 
-                            <mat-icon>logout</mat-icon>
+                        <button mat-menu-item>
+                            <mat-icon>exit_to_app</mat-icon>
                             Sign out
                         </button>
                     </mat-menu>
+
                 </li>
             </ul>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="push">
-        <mat-list>
-            <mat-list-item>
-                <a routerLink="">HBSForm</a>
-            </mat-list-item>
-            <mat-list-item>
-                <a routerLink="/item-list">Item List</a>
-            </mat-list-item>
-            <mat-list-item>
-                <a routerLink="/item-group">Item Group</a>
-            </mat-list-item>
-        </mat-list>
-            
-    </mat-sidenav>
-    <mat-sidenav-content>
-        Form
-    </mat-sidenav-content>
-  </mat-sidenav-container>

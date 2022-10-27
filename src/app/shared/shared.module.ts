@@ -11,6 +11,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { FormCardComponent } from './form-card/form-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {TextFieldModule} from '@angular/cdk/text-field';
+
+
 
 
 
@@ -20,7 +28,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormCardComponent,
   ],
   imports: [
     CommonModule,
@@ -31,13 +40,19 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
-    RouterModule
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    TextFieldModule,
+    RouterModule,
   ],
   exports: [
 
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormCardComponent
   ]
 })
 export class SharedModule { }

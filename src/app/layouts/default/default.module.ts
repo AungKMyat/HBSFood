@@ -10,7 +10,7 @@ import { DefaultComponent } from './default.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { MatDividerModule } from '@angular/material/divider';
     RouterModule,
     SharedModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule
   ]
 })
 export class DefaultModule { }
